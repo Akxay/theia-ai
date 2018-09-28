@@ -1,3 +1,5 @@
 # theia
 
-Team Members: Akshay Tiwari, David Kes, Kishan Panchal, Sara Mahar, Shannon McNish, Stephen Hsu
+Facial login system for classrooms
+
+Future work includes generalizing it as an integrable solution with other apps and login systems.
