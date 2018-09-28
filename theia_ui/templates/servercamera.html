@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Video Streaming Demonstration</title>
+  </head>
+  <body>
+    <h1>Video Streaming Demonstration</h1>
+
+    <form>
+    <input type="button" value="Break Camera Gen" onclick="{{ url_for('break_gen') }}" />
+    </form>
+    <div id="recorder">
+    <button id="mark_yes" value=1>Yes</button>
+    <button id="mark_no" value=0>No</button>
+    <script type="text/javascript" src="{{ url_for('static', filename='marker.js') }}"></script>
+    </div>
+  <img src="{{ url_for('video_feed') }}" style="border:10px solid black" height=50% width=50%>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<html>
+  <head>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+<link rel="import" href="{{ url_for('static',filename='google_analytics.html') }}">
+
+      <script>
+
+          var video = document.querySelector("#videoElement");
+ 
+navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+ 
+if (navigator.getUserMedia) {      
+    navigator.getUserMedia({video: true}, handleVideo, videoError);
+}
+ 
+function handleVideo(stream) {
+    video.src = window.URL.createObjectURL(stream);
+}
+ 
+function videoError(e) {
+    // do something
+}
+
+      </script>
+  
+    <title>Video Streaming Demonstration</title>
+
+  <style>
+
+
+  .button_green {
+  background: #afe58b;
+  border-radius: 100px;
+  padding: 20px 60px;
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 1.45em;
+  margin: 0 15px;
+}
+.button_red {
+  background: #d1455a;
+  border-radius: 100px;
+  padding: 20px 60px;
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 1.45em;
+  margin: 0 15px;
+}
+
+#about {
+  padding: 60px 0;
+  overflow: hidden;
+  display: block;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media (max-width: 768px) {
+  #about .about-img {
+    height: auto;
+  }
+  #about .about-img img {
+    margin-left: 0;
+    padding-bottom: 30px;
+  }
+}
+
+.centered-text {
+    text-align:center
+}
+
+#container {
+    margin: 0px auto;
+    width: 500px;
+    height: 375px;
+    border: 10px #333 solid;
+}
+#videoElement {
+    width: 500px;
+    height: 375px;
+    background-color: #666;
+}
+
+body { background: #f8f9fa !important; font-family: 'Poppins';font-size: 22px; }
+
+
+</style>
+
+<link href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+<link href=’https://fonts.googleapis.com/css?family=Poppins' rel=‘stylesheet’>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/style-navbar.css') }}">
+
+ </head>
+
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+
+  <body>
+    <section id="about" class="section-bg">
+
+      <div class="container-fluid centered-text">
+          <br>
+          <br>
+
+          <h1>Smile!</h1>
+          <h3>Get Ready</h3>
+
+{#          <img src="{{ url_for('video_feed') }}" style="border:10px solid black" height=50% width=50%>#}
+{#          <div id="container">#}
+              <img src="{{ url_for('static',filename='smiley.jpg') }}"
+                   style="border:10px solid black" height=50% width=35%>
+{#    <video autoplay="true" id="videoElement">#}
+{##}
+{#    </video>#}
+{#</div>#}
+          <br><br><br>
+
+
+        	<a href="/register/{{name}}" id="mark_yes" class="button_green">Take Picture</a>
+{#          <button id="register_break" onclick="location.href='/register/{{name}}'" type="button">#}
+{#              Take Picture</button>#}
+{#          <script type="text/javascript" src="{{ url_for('static', filename='marker.js') }}"></script>#}
+
+      </div>
+    </section>
+  </body>
+</html>
+

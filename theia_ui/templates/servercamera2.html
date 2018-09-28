@@ -1,0 +1,96 @@
+<html>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <head>
+
+  <link rel="import" href="{{ url_for('static',filename='google_analytics.html') }}">
+
+
+    <title>Video Streaming Demonstration</title>
+    
+  <style>
+
+
+  .button_green {
+  background: #afe58b;
+  border-radius: 100px;
+  padding: 20px 60px;
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 1.45em;
+  margin: 0 15px;
+}
+.button_red {
+  background: #d1455a;
+  border-radius: 100px;
+  padding: 20px 60px;
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 1.45em;
+  margin: 0 15px;
+}
+
+#about {
+  padding: 60px 0;
+  overflow: hidden;
+  display: block;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media (max-width: 768px) {
+  #about .about-img {
+    height: auto;
+  }
+  #about .about-img img {
+    margin-left: 0;
+    padding-bottom: 30px;
+  }
+}
+
+.centered-text {
+    text-align:center
+}  
+
+body { background: #f8f9fa !important; }
+
+
+</style>
+
+<link href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style-navbar.css') }}">
+
+
+</head>
+
+
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+
+          <br><br><br>
+
+  <body onbeforeunload="return break_cam()">
+    <section id="about" class="section-bg">
+
+      <div class="container-fluid centered-text">
+
+          <h1>Video Streaming Demonstration</h1>
+          <h3>Is this you?</h3>
+
+          <img src="{{ url_for('video_feed') }}" style="border:10px solid black" height=50% width=50%>
+          <br><br><br>
+
+      <div>
+        	<button id="mark_yes" value=1 class="button_green">YES</button>
+        	<button id="mark_no" value=1 class="button_red">NO</button>
+          <script type="text/javascript" src="{{ url_for('static', filename='marker.js') }}"></script>
+      </div>
+
+      </div>
+    </section>
+  </body>
+</html>
+

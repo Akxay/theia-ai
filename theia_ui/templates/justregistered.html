@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="import" href="{{ url_for('static',filename='google_analytics.html') }}">
+
+	<title>Login V3</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+
+<!---=== href="{{ url_for('static',filename='css2/bootstrap.min.css') }}"  -->
+
+	<link rel="icon" type="image/png" href="{{ url_for('static',filename='images/icons/favicon.ico') }}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor2/bootstrap/css/bootstrap.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='fonts2/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='fonts2/iconic/css/material-design-iconic-font.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor2/animate/animate.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor2/css-hamburgers/hamburgers.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor2/animsition/css/animsition.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor2/select2/select2.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor2/daterangepicker/daterangepicker.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css2/util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css2/main.css') }}">
+<!--===============================================================================================-->
+	  <link rel="stylesheet" href="{{ url_for('static',filename='css/style-navbar.css') }}">
+
+</head>
+
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+
+
+<body>
+
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+			<div class="wrap-login100">
+<!--				<form class="login100-form validate-form" action="/user_home" method="POST">--->
+
+
+					<span class="login100-form-title p-b-34 p-t-27">
+						Registration Successful!
+					</span>
+
+					<div class="container-register100-form-btn">
+						<a class="register100-form-btn" href="/good_job" style="font-size: 14px;">
+							Back to Home
+						</a>
+					</div>
+
+					<div class="container-register100-form-btn">
+						<a class="register100-form-btn" href="/registerstudent" style="font-size: 13px;">
+							Register Another Student
+						</a>
+					</div>
+
+
+
+<!--				</form>--->
+			</div>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor2/jquery/jquery-3.2.1.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor2/animsition/js/animsition.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor2/bootstrap/js/popper.js') }}"></script>
+	<script src="{{ url_for('static',filename='vendor2/bootstrap/js/bootstrap.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor2/select2/select2.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor2/daterangepicker/moment.min.js') }}"></script>
+	<script src="{{ url_for('static',filename='vendor2/daterangepicker/daterangepicker.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor2/countdowntime/countdowntime.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='js2/main.js') }}"></script>
+
+</body>
+</html>

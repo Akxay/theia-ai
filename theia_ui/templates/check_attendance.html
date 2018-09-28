@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+
+
+    /* Add a black background color to the top navigation */
+
+    /* Add a color to the active/current link */
+
+    table, th, td {
+        position: relative;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 20px;
+        text-align: left;
+    {#    position: down;#}
+    }
+
+
+</style>
+
+<head>
+
+    <link rel="import"
+          href="{{ url_for('static',filename='google_analytics.html') }}">
+
+
+    <meta charset="UTF-8">
+    <title>User Home</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+     --><!--   <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ -->
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:700'
+          rel='stylesheet' type='text/css'>
+
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css'
+          rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static',filename='css_user/style.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static',filename='css/style-navbar.css') }}">
+
+
+    <script>
+
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
+
+
+</head>
+
+
+
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+
+
+<script type="text/javascript">
+    var form = document.getElementById('form'),
+        button = form['submit-button'];
+    form.onsubmit = function (e) {
+        return !!form.getAttribute('data-allow-submit');
+    };
+    button.onclick = function () {
+        form.setAttribute('data-allow-submit', 1);
+        form.submit();
+    };
+</script>
+
+<body>
+
+
+<div id="CenterColumn" style="margin-top: 200px; padding:25px;margin-left:50px;
+position: static;border: 2px solid #111;">
+
+
+    <h3>Attendance Report</h3>
+    <table style="width:80%; margin-top: 20%;" align="center";>
+        <tr>
+            <th>Student ID</th>
+            <th>Class ID</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+
+        {% for i in range(length) %}
+            <tr>
+                <td>{{ sid[i] }}</td>
+                <td>{{ cid[i] }}</td>
+                <td>{{ date[i] }}</td>
+                <td>{{ time[i] }}</td>
+            </tr>
+        {% endfor %}
+
+
+    </table>
+
+
+</div>
+
+<form action="/get_date/{{ class_name }}" method="POST">
+    <p>Date: <input type="text" id="datepicker" name="partydate"></p>
+    <input type="submit" value="Filter date">
+
+</form>
+
+</body>
+
+</html>
+

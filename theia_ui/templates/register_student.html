@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="import" href="{{ url_for('static',filename='google_analytics.html') }}">
+  
+	<title>Contact V10</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{{ url_for('static',filename='images_form/icons/favicon.ico')}}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor_form/bootstrap/css/bootstrap.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='fonts_form/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor_form/animate/animate.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor_form/css-hamburgers/hamburgers.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor_form/animsition/css/animsition.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor_form/select2/select2.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor_form/daterangepicker/daterangepicker.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css_form/util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css_form/main.css')}}">
+<!--===============================================================================================-->
+	  <link rel="stylesheet" href="{{ url_for('static',filename='css/style-navbar.css') }}">
+
+</head>
+
+
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+
+
+<body>
+
+
+	<div class="container-contact100">
+
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" action="/smile" method="POST">
+				<br><br>
+				<span class="contact100-form-title">
+					Register New Student
+				</span>
+
+				<span class="label-input100">Student First Name</span>
+				<div class="wrap-input100 validate-input" data-validate="Please enter first name">
+					<input class="input100" type="text" name="fname" placeholder="Please enter first name">
+					<span class="focus-input100"></span>
+				</div>
+
+				<span class="label-input100">Student Last Name</span>
+				<div class="wrap-input100 validate-input" data-validate="Please enter last name">
+					<input class="input100" type="text" name="lname" placeholder="Please enter last name">
+					<span class="focus-input100"></span>
+				</div>
+
+
+				<span class="label-input100">Student ID</span>
+				<div class="wrap-input100 validate-input" data-validate = "Please enter your student id">
+					<input class="input100" type="text" name="sid" placeholder="Please enter your student id">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn">
+						<span>
+							<i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+							Register
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor_form/jquery/jquery-3.2.1.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor_form/animsition/js/animsition.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor_form/bootstrap/js/popper.js')}}"></script>
+	<script src="{{ url_for('static',filename='vendor_form/bootstrap/js/bootstrap.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor_form/select2/select2.min.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor_form/daterangepicker/moment.min.js')}}"></script>
+	<script src="{{ url_for('static',filename='vendor_form/daterangepicker/daterangepicker.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='vendor_form/countdowntime/countdowntime.js')}}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static',filename='js_form/main.js')}}"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>

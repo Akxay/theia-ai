@@ -1,0 +1,39 @@
+ <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <h1><a class="scrollto">Theia</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#intro"><img src="img/logo.png" alt="" title=""></a> -->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li><a href="/user_home">Home</a></li>
+          <li class="menu-has-children"><a href="">Take Attendance</a>
+            <ul>
+                    {% for name in class_names %}
+                    <li><a href="/servercamera.htm">
+                    {{name}}</a></li>
+                    {% endfor %}
+            </ul>
+          </li>
+
+          <li><a href="/registerstudent">Add Student</a></li>
+          <li><a href="/registerclass">Add Class</a></li>
+          <li class="menu-has-children"><a href="">Check Attendance</a>
+            <ul>              
+                    {% for name in class_names %}
+                    <li><a href="/check_attendance/{{name}}">
+                    {{name}}</a></li>
+                    {% endfor %}
+            </ul>
+          </li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
